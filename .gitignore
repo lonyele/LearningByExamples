@@ -24,6 +24,7 @@ packages/*/project/*
 packages/*/node_modules/*
 packages/*/.next
 packages/*/build/*
+packages/*/.gitignore
 
 # IntelliJ project files
 *.iml
@@ -33,3 +34,7 @@ packages/*/.cache
 
 packages/*/.scala_dependencies
 packages/*/.worksheet
+
+
+
+
