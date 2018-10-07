@@ -1,0 +1,2 @@
+TabManagement_api_gateway에서 auth 할때 연슬할려고 만듬. 내기억에 graphql오 passport 같이 쓰려고 미들웨어 등등 했지만 실패
+걍 passport쓰기로함

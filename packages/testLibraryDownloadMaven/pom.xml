@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>testLibraryDownloadMaven</groupId>
+    <artifactId>testLibraryDownloadMaven</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.apollographql.apollo</groupId>
+            <artifactId>apollo-runtime</artifactId>
+            <version>0.4.3</version>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>io.github.sac</groupId>
+            <artifactId>SocketclusterClientJava</artifactId>
+            <version>1.7.2</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+</project>
+
+

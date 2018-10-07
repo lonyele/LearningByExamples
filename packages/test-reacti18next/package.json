@@ -1,0 +1,31 @@
+{
+  "name": "test-reacti18next",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/i18next-browser-languagedetector": "^2.0.1",
+    "@types/i18next-xhr-backend": "^1.4.1",
+    "@types/react-i18next": "^7.6.1",
+    "chalk": "^2.4.1",
+    "i18next": "^11.3.2",
+    "i18next-browser-languagedetector": "^2.2.0",
+    "i18next-xhr-backend": "^1.5.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-i18next": "^7.7.0",
+    "react-scripts-ts": "2.16.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "@types/node": "^10.3.2",
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
+    "typescript": "^2.9.1"
+  }
+}

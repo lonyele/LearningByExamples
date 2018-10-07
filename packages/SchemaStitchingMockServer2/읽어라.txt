@@ -1,0 +1,1 @@
+이거 graphql schema stitching 할때 테스트로 해봄. 겹치는거는 mergeSchema배열 뒤에거 적용 된다던지(onTypeResolver인가 이거 규칙도 정할수 있을껄?) 테스트한다고 만들음
