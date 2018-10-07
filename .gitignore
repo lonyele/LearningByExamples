@@ -26,6 +26,7 @@ packages/*/*/node_modules/*
 packages/*/.next
 packages/*/build/*
 packages/*/.gitignore
+packages/*/.git
 
 # IntelliJ project files
 *.iml
