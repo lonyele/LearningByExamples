@@ -2,23 +2,34 @@
 *.log
 
 # idea
-.idea
-.idea_modules
+packages/*/.idea
+packages/*/.idea_modules
 
 # sbt specific
-dist/*
-target/
-lib_managed/
-src_managed/
-project/boot/
-project/plugins/project/
+packages/*/dist/*
+
+packages/*/target/
+packages/*/lib_managed/
+packages/*/src_managed/
+packages/*/project/boot/
+packages/*/project/plugins/project/
 
 # Scala-IDE specific
-.scala_dependencies
+packages/*/.scala_dependencies
 
+#whatttttttttt
 packages/*/.idea
 packages/*/.vscode
-packages/*/.project
+packages/*/project/*
 packages/*/node_modules/*
-packages/dist/*
+packages/*/.next
+packages/*/build/*
 
+# IntelliJ project files
+*.iml
+packages/*/out
+packages/*/.history
+packages/*/.cache
+
+packages/*/.scala_dependencies
+packages/*/.worksheet
