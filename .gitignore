@@ -22,6 +22,7 @@ packages/*/.idea
 packages/*/.vscode
 packages/*/project/*
 packages/*/node_modules/*
+packages/*/*/node_modules/*
 packages/*/.next
 packages/*/build/*
 packages/*/.gitignore

@@ -1,0 +1,24 @@
+.css-isolation-popup {
+  
+  top: 0px;
+  left: 0px;
+  width: 210px;
+  height: 110px;
+  z-index: 9999999;
+  border: 3px solid red;
+
+  display : 'none';
+}
+
+
+
+/*
+position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 210px;
+  height: 110px;
+  z-index: 9999999;
+
+*/
+
