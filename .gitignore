@@ -27,7 +27,7 @@ packages/*/.next
 packages/*/build/*
 packages/*/.gitignore
 packages/*/.git
-
+packages/*/.terraform
 # IntelliJ project files
 *.iml
 packages/*/out

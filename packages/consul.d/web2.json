@@ -1,0 +1,1 @@
+{ "service": { "name": "web2", "tags": ["node"], "port": 8001 } }
