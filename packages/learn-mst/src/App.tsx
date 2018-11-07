@@ -1,15 +1,11 @@
-import React, { Component } from "react";
+import * as React from "react";
 
 import { Memo } from "./components/molecules/Memo";
-
-interface MemoItem {
-  content: string;
-  completed: boolean;
-}
-class App extends Component<{
-  store: { memo: MemoItem[]; addMemoItem: () => void };
+import { IMemoItem } from "./components/molecules/MemoItem";
+class App extends React.Component<{
+  store: { memo: IMemoItem[]; addMemoItem: () => void };
 }> {
-  render() {
+  public render() {
     console.log("store", this.props.store);
     const { memo, addMemoItem } = this.props.store;
     return (

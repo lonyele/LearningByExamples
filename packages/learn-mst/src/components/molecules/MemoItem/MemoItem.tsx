@@ -1,6 +1,6 @@
 import * as React from "react";
-import { MemoItem } from "./styles/MemoItem.style";
 import { IMemoItem } from "../../../models/memoItem/memoItem";
+import { MemoItem } from "./styles/MemoItem.style";
 
 export default (props: IMemoItem) => {
   const { content, completed } = props;
