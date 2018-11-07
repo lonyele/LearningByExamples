@@ -1,25 +1,20 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-class App extends Component {
+import { Memo } from "./components/molecules/Memo";
+
+interface MemoItem {
+  content: string;
+  completed: boolean;
+}
+class App extends Component<{
+  store: { memo: MemoItem[]; addMemoItem: () => void };
+}> {
   render() {
+    console.log("store", this.props.store);
+    const { memo, addMemoItem } = this.props.store;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div style={{ margin: "100px" }}>
+        <Memo memo={memo} addMemoItem={addMemoItem} />
       </div>
     );
   }
