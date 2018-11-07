@@ -1,5 +1,5 @@
 import * as React from "react";
-import { IMemoItem } from "../../../models/memoItem/memoItem";
+import { IMemoItem } from "./models/MemoItem.model";
 import { MemoItem } from "./styles/MemoItem.style";
 
 export default (props: IMemoItem) => {
