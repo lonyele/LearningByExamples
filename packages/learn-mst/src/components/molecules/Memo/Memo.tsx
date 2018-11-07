@@ -1,7 +1,7 @@
-import * as React from "react";
-import { Memo } from "./styles/Memo.style";
-import { MemoItem, IMemoItem } from "../MemoItem";
 import { observer } from "mobx-react";
+import * as React from "react";
+import { IMemoItem, MemoItem } from "../MemoItem";
+import { Memo } from "./styles/Memo.style";
 
 const renderMemoItems = (memo: IMemoItem[]) => {
   return memo.map((memoItem: IMemoItem, index: number) => {
