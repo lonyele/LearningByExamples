@@ -1,5 +1,5 @@
+import { MemoItemModel } from "components/molecules/MemoItem";
 import { types } from "mobx-state-tree";
-import { MemoItemModel } from "../../components/molecules/MemoItem";
 
 export const RootStore = types
   .model({
