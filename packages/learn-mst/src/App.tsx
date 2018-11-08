@@ -7,10 +7,14 @@ class App extends React.Component<{
 }> {
   public render() {
     console.log("store", this.props.store);
-    const { memo, addMemoItem } = this.props.store;
+    const { memo, addMemoItem, removeMemoItem } = this.props.store;
     return (
       <div style={{ margin: "100px" }}>
-        <Memo memo={memo} addMemoItem={addMemoItem} />
+        <Memo
+          memo={memo}
+          addMemoItem={addMemoItem}
+          removeMemoItem={removeMemoItem}
+        />
       </div>
     );
   }

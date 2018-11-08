@@ -1,5 +1,7 @@
-import { MemoItemModel } from "components/molecules/MemoItem";
+import * as cuid from "cuid";
 import { Instance, types } from "mobx-state-tree";
+
+import { IMemoItem, MemoItemModel } from "components/molecules/MemoItem";
 import { UserModel } from "../user";
 
 export const RootStore = types
@@ -13,7 +15,15 @@ export const RootStore = types
       content: string = "whattt",
       completed: boolean = false
     ) {
-      self.memo.push(MemoItemModel.create({ user, content, completed }));
+      self.memo.push(
+        MemoItemModel.create({ id: cuid(), user, content, completed })
+      );
+    },
+
+    removeMemoItem(id: string) {
+      self.memo.replace(
+        self.memo.filter((memoItem: IMemoItem) => memoItem.id !== id)
+      );
     }
   }));
 

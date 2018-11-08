@@ -17,16 +17,19 @@ const initialState = {
   },
   memo: [
     {
+      id: "qqqqqq",
       user: "1",
       content: "content 11111",
       completed: true
     },
     {
+      id: "wwwwww",
       user: "2",
       content: "content 2222",
       completed: false
     },
     {
+      id: "eeeee",
       user: "3",
       content: "content 3333",
       completed: false
