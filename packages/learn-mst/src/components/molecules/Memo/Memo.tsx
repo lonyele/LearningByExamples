@@ -1,19 +1,17 @@
 import { observer } from "mobx-react";
 import * as React from "react";
 import { IMemoItem, MemoItem } from "../MemoItem";
+import { IMemo } from "./models/Memo.model";
 import { Memo } from "./styles/Memo.style";
 
-const renderMemoItems = (
-  memo: IMemoItem[],
-  removeMemoItem: (id: string) => void
-) => {
-  return memo.map((memoItem: IMemoItem, index: number) => {
-    console.log("memoIte4m", memoItem);
+const renderMemoItems = (memo: IMemo) => {
+  console.log("filteredMemoItems", memo.filteredMemoItems);
+  return memo.filteredMemoItems.map((memoItem: IMemoItem, index: number) => {
     return (
       <div key={index} style={{ margin: "10px" }}>
         <MemoItem
           {...memoItem}
-          removeMemoItem={removeMemoItem}
+          removeMemoItem={memo.removeMemoItem}
           toggle={memoItem.toggle}
         />
       </div>
@@ -21,23 +19,26 @@ const renderMemoItems = (
   });
 };
 
-export default observer(
-  (props: {
-    memo: IMemoItem[];
-    addMemoItem: (userId: string) => void;
-    removeMemoItem: (id: string) => void;
-  }) => {
-    const { memo, addMemoItem, removeMemoItem } = props;
-    const onAddMemoItem = (e: any) => {
-      console.log("add MemoItem??", addMemoItem);
-      addMemoItem("1");
-    };
-    return (
-      <Memo>
-        <h3>Memo Title</h3>
-        <button onClick={onAddMemoItem}>Add MemoItem</button>
-        {renderMemoItems(memo, removeMemoItem)}
-      </Memo>
-    );
-  }
-);
+export default observer((props: { memo: IMemo }) => {
+  const { memo } = props;
+  const onAddMemoItem = (e: any) => {
+    memo.addMemoItem("1");
+  };
+
+  const onFilterChanged = (e: any) => {
+    memo.changeFilter(e.target.value);
+  };
+  console.log("?????", memo);
+  return (
+    <Memo>
+      <h3>Memo Title</h3>
+      <button onClick={onAddMemoItem}>Add MemoItem</button>
+      <select onChange={onFilterChanged} value={memo.filter}>
+        <option value="All">All</option>
+        <option value="Completed">Completed</option>
+        <option value="Incomplete">Incomplete</option>
+      </select>
+      {renderMemoItems(memo)}
+    </Memo>
+  );
+});

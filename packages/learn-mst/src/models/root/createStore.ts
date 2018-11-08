@@ -1,3 +1,4 @@
+import { Filter } from "src/components/molecules/Memo/models/Memo.model";
 import { RootStore } from "./root";
 
 const initialState = {
@@ -15,25 +16,69 @@ const initialState = {
       name: "skyrabbit"
     }
   },
-  memo: [
-    {
-      id: "qqqqqq",
+  memos: {
+    "222": {
+      id: "222",
       user: "1",
-      content: "content 11111",
-      completed: true
+      memoItems: [
+        {
+          id: "qqqqqq",
+          user: "1",
+          content: "content 11111",
+          completed: true
+        },
+        {
+          id: "wwwwww",
+          user: "2",
+          content: "content 2222",
+          completed: false
+        },
+        {
+          id: "eeeee",
+          user: "3",
+          content: "content 3333",
+          completed: false
+        }
+      ],
+      filter: Filter.All
     },
-    {
-      id: "wwwwww",
+    "444": {
+      id: "444",
       user: "2",
-      content: "content 2222",
-      completed: false
-    },
-    {
-      id: "eeeee",
-      user: "3",
-      content: "content 3333",
-      completed: false
+      memoItems: [
+        {
+          id: "qqqqqq333",
+          user: "1",
+          content: "content 11111",
+          completed: true
+        },
+        {
+          id: "wwwwww333",
+          user: "2",
+          content: "content 2222",
+          completed: false
+        },
+        {
+          id: "eeeee333",
+          user: "3",
+          content: "content 3333",
+          completed: false
+        },
+        {
+          id: "wwwwww333",
+          user: "2",
+          content: "content 2222",
+          completed: false
+        },
+        {
+          id: "eeeee333",
+          user: "3",
+          content: "content 3333",
+          completed: false
+        }
+      ],
+      filter: Filter.All
     }
-  ]
+  }
 };
 export const store = RootStore.create(initialState);
