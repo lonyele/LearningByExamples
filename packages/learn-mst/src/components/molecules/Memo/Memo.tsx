@@ -10,11 +10,11 @@ const renderMemoItems = (memo: IMemoItem[]) => {
 };
 
 export default observer(
-  (props: { memo: IMemoItem[]; addMemoItem: () => void }) => {
+  (props: { memo: IMemoItem[]; addMemoItem: (userId: string) => void }) => {
     const { memo, addMemoItem } = props;
     const onAddMemoItem = (e: any) => {
       console.log("add MemoItem??", addMemoItem);
-      addMemoItem();
+      addMemoItem("1");
     };
     return (
       <Memo>

@@ -1,9 +1,9 @@
 import * as React from "react";
 
 import { Memo } from "./components/molecules/Memo";
-import { IMemoItem } from "./components/molecules/MemoItem";
+import { IRootStore } from "./models/root/root";
 class App extends React.Component<{
-  store: { memo: IMemoItem[]; addMemoItem: () => void };
+  store: IRootStore;
 }> {
   public render() {
     console.log("store", this.props.store);

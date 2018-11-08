@@ -1,6 +1,8 @@
 import { Instance, types } from "mobx-state-tree";
+import { User } from "src/models/user/user";
 
 export const MemoItem = types.model({
+  user: types.reference(User),
   content: types.string,
   completed: types.boolean
 });

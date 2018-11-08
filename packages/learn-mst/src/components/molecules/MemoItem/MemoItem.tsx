@@ -3,11 +3,12 @@ import { IMemoItem } from "./models/MemoItem.model";
 import { MemoItem } from "./styles/MemoItem.style";
 
 export default (props: IMemoItem) => {
-  const { content, completed } = props;
+  const { content, completed, user } = props;
   return (
     <MemoItem>
-      <p>{content}</p>
-      <p>{completed ? "done!" : "Not Yet!"}</p>
+      <div>{user.name}</div>
+      <div>{content}</div>
+      <div>{completed ? "done!" : "Not Yet!"}</div>
     </MemoItem>
   );
 };
