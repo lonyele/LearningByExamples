@@ -8,9 +8,14 @@ const renderMemoItems = (
   removeMemoItem: (id: string) => void
 ) => {
   return memo.map((memoItem: IMemoItem, index: number) => {
+    console.log("memoIte4m", memoItem);
     return (
       <div key={index} style={{ margin: "10px" }}>
-        <MemoItem {...memoItem} removeMemoItem={removeMemoItem} />
+        <MemoItem
+          {...memoItem}
+          removeMemoItem={removeMemoItem}
+          toggle={memoItem.toggle}
+        />
       </div>
     );
   });
