@@ -57,7 +57,7 @@ export default class FooterContainer extends React.Component<any> {
     return (
       <Footer>
         {footerDatas.map((data: IFooterLink) => (
-          <FooterLink title={data.title} links={data.links} />
+          <FooterLink key={data.title} title={data.title} links={data.links} />
         ))}
         <Copyright content={copyrightText} />
       </Footer>
