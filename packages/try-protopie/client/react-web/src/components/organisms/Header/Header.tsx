@@ -7,6 +7,8 @@ import { Header } from "./styles/Header.style";
 // }
 const links = [
   { name: "Protopie", url: "/" },
+  { name: "Web", url: "/web" },
+  { name: "Electron", url: "/electron" },
   { name: "Features", url: "/features" },
   { name: "Learn", url: "/learn" },
   { name: "Gallery", url: "/gallery" },

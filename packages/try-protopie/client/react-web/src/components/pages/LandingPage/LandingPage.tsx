@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import { Footer } from "src/components/organisms/Footer";
+import { Header } from "src/components/organisms/Header";
 import { LandingPage } from "./styles/LandingPage.style";
 // export interface ILandingPageProps {
 // }
@@ -8,6 +10,7 @@ export default class LandingPageContainer extends React.Component<any, any> {
   public render() {
     return (
       <LandingPage>
+        <Header />
         <div>LadingPage</div>
         <section>
           The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
@@ -142,6 +145,7 @@ export default class LandingPageContainer extends React.Component<any, any> {
           rejects pleasures to secure other greater pleasures, or else he
           endures pains to avoid worse pains."
         </section>
+        <Footer />
       </LandingPage>
     );
   }
