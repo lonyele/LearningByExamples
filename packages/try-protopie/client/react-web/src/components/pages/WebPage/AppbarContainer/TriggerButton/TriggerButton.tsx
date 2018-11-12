@@ -17,7 +17,8 @@ export class TriggerButton extends React.Component<any, any> {
           height: "40px",
           width: "40px",
           minWidth: "40px",
-          backgroundColor: "white"
+          backgroundColor: "white",
+          marginRight: "5px"
         }}
         iconProps={{ iconName: "FontColorA" }}
         styles={{

@@ -38,7 +38,7 @@ export class DeviceModal extends React.Component<
     const { selectedDeviceType, tempSelectedDevice } = this.state;
     const selectedDevice = devices.selectedDevice;
     return (
-      <div style={{ margin: "auto" }}>
+      <div style={{ margin: "auto", marginBottom: "12px" }}>
         <DefaultButton
           secondaryText="Opens the Sample Modal"
           onClick={this._showModal}

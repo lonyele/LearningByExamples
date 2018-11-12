@@ -12,7 +12,8 @@ export class ShapeButton extends React.Component<any, any> {
           height: "40px",
           width: "40px",
           minWidth: "40px",
-          backgroundColor: "white"
+          backgroundColor: "white",
+          marginRight: "5px"
         }}
         iconProps={{ iconName: "6PointStar" }}
         styles={{

@@ -13,7 +13,8 @@ export class ImageButton extends React.Component<any, any> {
           display: "flex",
           flexDirection: "column",
           width: "40px",
-          cursor: "pointer"
+          cursor: "pointer",
+          marginRight: "5px"
         }}
         onClick={onAlertClicked("Image")}
       >

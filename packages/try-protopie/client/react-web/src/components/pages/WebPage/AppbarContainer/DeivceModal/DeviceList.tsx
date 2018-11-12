@@ -41,7 +41,7 @@ export class DeviceList extends React.Component<any, any> {
                 paddingLeft: "30px",
                 backgroundColor:
                   tempSelectedDevice && tempSelectedDevice.name === name
-                    ? "rgb(244, 244, 244)"
+                    ? "#bfbfbf"
                     : "inherit"
               }}
               onClick={setTempSelectedDevice(device)}

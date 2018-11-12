@@ -1,6 +1,7 @@
 import { DefaultButton } from "office-ui-fabric-react/lib/Button";
 import * as React from "react";
 
+import { onAlertClicked } from "src/components/molecules/utils/onAlertClicked";
 import styled from "styled-components";
 
 const StyledCloudButton = styled.div`
@@ -23,6 +24,7 @@ export class CloudButton extends React.Component<any, any> {
           width: "40px",
           minWidth: "40px",
           backgroundColor: "white"
+          // marginRight: "5px"
         }}
         iconProps={{ iconName: "Cloud" }}
         styles={{
@@ -40,7 +42,7 @@ export class CloudButton extends React.Component<any, any> {
           items: []
         }}
         menuAs={() => (
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", marginRight: "200px" }}>
             <div>
               <StyledCloudButton>
                 <div style={{ margin: "auto" }}>
@@ -48,7 +50,12 @@ export class CloudButton extends React.Component<any, any> {
                   <div>Uplaod to Cloud to get a sharable link and</div>
                   <div>manage you Pies in the Cloud.</div>
                 </div>
-                <div style={{ height: "50px" }}>Go to Cloud</div>
+                <div
+                  style={{ padding: "15px", borderTop: "1px solid black" }}
+                  onClick={onAlertClicked("Go to Cloud")}
+                >
+                  Go to Cloud
+                </div>
               </StyledCloudButton>
             </div>
           </div>
