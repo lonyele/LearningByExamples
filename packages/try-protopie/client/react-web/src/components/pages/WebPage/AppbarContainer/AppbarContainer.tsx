@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { ImageButton } from "./ImageButton";
+import { ShapeButton } from "./ShapeButton";
 import { VideoButton } from "./VideoButton";
 export class AppbarContainer extends React.Component<any, any> {
   public render() {
@@ -10,6 +11,7 @@ export class AppbarContainer extends React.Component<any, any> {
       >
         <ImageButton />
         <VideoButton />
+        <ShapeButton />
       </div>
     );
   }
