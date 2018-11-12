@@ -2,6 +2,7 @@ import * as React from "react";
 
 import { CloudButton } from "./CloudButton";
 import { ContainerButton } from "./ContainerButton";
+import { DeviceModal } from "./DeivceModal/DeviceModal";
 import { DeviceButton } from "./DeviceButton";
 import { ImageButton } from "./ImageButton";
 import { PlayButton } from "./PlayButton";
@@ -22,7 +23,7 @@ export class AppbarContainer extends React.Component<any, any> {
         <ShapeButton />
         <TextButton />
         <ContainerButton />
-        <div style={{ margin: "auto" }}>디바이스들~~</div>
+        <DeviceModal devices={this.props.store.devices} />
         <TriggerButton />
         <PreviewButton />
         <DeviceButton />
