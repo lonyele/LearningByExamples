@@ -25,7 +25,7 @@ export default class WebPageContainer extends React.Component<any, any> {
           <CanvasContainer />
           <ActionsContainer />
           <DetailsContainer />
-          <PreviewContainer />
+          <PreviewContainer store={this.props.store} />
         </GridContainer>
       </WebPage>
     );
