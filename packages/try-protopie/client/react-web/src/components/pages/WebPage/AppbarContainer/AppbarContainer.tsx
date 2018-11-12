@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import { ContainerButton } from "./ContainerButton";
 import { ImageButton } from "./ImageButton";
 import { ShapeButton } from "./ShapeButton";
 import { TextButton } from "./TextButton";
@@ -14,6 +15,7 @@ export class AppbarContainer extends React.Component<any, any> {
         <VideoButton />
         <ShapeButton />
         <TextButton />
+        <ContainerButton />
       </div>
     );
   }
