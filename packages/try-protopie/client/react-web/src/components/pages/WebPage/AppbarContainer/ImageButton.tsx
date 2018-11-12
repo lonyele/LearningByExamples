@@ -9,7 +9,12 @@ export class ImageButton extends React.Component<any, any> {
   public render() {
     return (
       <div
-        style={{ display: "flex", flexDirection: "column", width: "40px" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "40px",
+          cursor: "pointer"
+        }}
         onClick={onAlertClicked("Image")}
       >
         <Icon

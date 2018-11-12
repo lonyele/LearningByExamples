@@ -2,7 +2,7 @@ import { Icon } from "office-ui-fabric-react/lib/Icon";
 import * as React from "react";
 import { onAlertClicked } from "src/components/molecules/utils/onAlertClicked";
 
-export class VideoButton extends React.Component<any, any> {
+export class PlayButton extends React.Component<any, any> {
   public render() {
     return (
       <div
@@ -12,13 +12,13 @@ export class VideoButton extends React.Component<any, any> {
           width: "40px",
           cursor: "pointer"
         }}
-        onClick={onAlertClicked("Video")}
+        onClick={onAlertClicked("Play")}
       >
         <Icon
-          iconName="MSNVideos"
+          iconName="Play"
           style={{ fontSize: "30px", alignSelf: "center" }}
         />
-        <span style={{ alignSelf: "center", fontSize: "10px" }}>Video</span>
+        <span style={{ alignSelf: "center", fontSize: "10px" }}>Play</span>
       </div>
     );
   }
