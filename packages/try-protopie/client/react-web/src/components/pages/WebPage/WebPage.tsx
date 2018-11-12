@@ -19,7 +19,7 @@ export default class WebPageContainer extends React.Component<any, any> {
       <WebPage>
         <Header />
         <MenuContainer />
-        <AppbarContainer />
+        <AppbarContainer store={this.props.store} />
         <GridContainer>
           <LayerContainer />
           <CanvasContainer />

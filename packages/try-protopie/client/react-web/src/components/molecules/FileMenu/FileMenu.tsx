@@ -18,7 +18,9 @@ export class FileMenu extends React.Component<any, any> {
       <DefaultButton
         id="FileMenu"
         text="File"
-        styles={{ menuIcon: { display: "none" } }}
+        styles={{
+          menuIcon: { display: "none" }
+        }}
         menuProps={{
           shouldFocusOnMount: true,
           items: [
