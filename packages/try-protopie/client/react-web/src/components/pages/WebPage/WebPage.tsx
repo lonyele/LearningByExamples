@@ -1,14 +1,14 @@
 import * as React from "react";
 
-import { EditMenu } from "src/components/molecules/EditMenu/EditMenu";
-import { FileMenu } from "src/components/molecules/FileMenu/FileMenu";
-import { HelpMenu } from "src/components/molecules/HelpMenu/HelpMenu";
-import { InsertMenu } from "src/components/molecules/InsertMenu/InsertMenu";
-import { ObjectMenu } from "src/components/molecules/ObjectMenu/ObjectMenu";
-import { RunMenu } from "src/components/molecules/RunMenu/RunMenu";
-import { ViewMenu } from "src/components/molecules/ViewMenu/ViewMenu";
-import { WindowMenu } from "src/components/molecules/WindowMenu/WindowMenu";
 import { Header } from "src/components/organisms/Header";
+import { ActionsContainer } from "./ActionsContainer/ActionsContainer";
+import { AppbarContainer } from "./AppbarContainer/AppbarContainer";
+import { CanvasContainer } from "./CanvasContainer.tsx/CanvasContainer";
+import { DetailsContainer } from "./DetailsContainer/DetailsContainer";
+import { GridContainer } from "./GridContainer/GridContainter.style";
+import LayerContainer from "./LayerContainer/LayerContainer";
+import MenuContainer from "./MenuContainer/MenuContainer";
+import { PreviewContainer } from "./PreviewContainer/PreviewContainer";
 import { WebPage } from "./WebPage.style";
 // export interface ILandingPageProps {
 // }
@@ -18,15 +18,15 @@ export default class WebPageContainer extends React.Component<any, any> {
     return (
       <WebPage>
         <Header />
-        <FileMenu />
-        <EditMenu />
-        <InsertMenu />
-        <ObjectMenu />
-        <ViewMenu />
-        <RunMenu />
-        <WindowMenu />
-        <HelpMenu />
-        <section>WebPage~~~~</section>
+        <MenuContainer />
+        <AppbarContainer />
+        <GridContainer>
+          <LayerContainer />
+          <CanvasContainer />
+          <ActionsContainer />
+          <DetailsContainer />
+          <PreviewContainer />
+        </GridContainer>
       </WebPage>
     );
   }
