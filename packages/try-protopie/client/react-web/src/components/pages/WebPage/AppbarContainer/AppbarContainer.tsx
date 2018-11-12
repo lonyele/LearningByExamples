@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { ContainerButton } from "./ContainerButton";
+import { DeviceButton } from "./DeviceButton";
 import { ImageButton } from "./ImageButton";
 import { PreviewButton } from "./PreviewButton";
 import { ShapeButton } from "./ShapeButton";
@@ -21,6 +22,7 @@ export class AppbarContainer extends React.Component<any, any> {
         <div>디바이스들~~</div>
         <TriggerButton />
         <PreviewButton />
+        <DeviceButton />
       </div>
     );
   }
