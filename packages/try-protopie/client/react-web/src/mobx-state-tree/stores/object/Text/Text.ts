@@ -3,8 +3,8 @@ import { Instance, types } from "mobx-state-tree";
 
 export const Text = types
   .model({
-    type: "Text"
-
+    type: "Text",
+    textContents: types.string
     // type: ObjectType.Text,
     // type: types.enumeration<ObjectType.Text>("Text", [ObjectType.Text]),
   })

@@ -27,11 +27,16 @@ export const Object = types
       self.name = newName;
     },
     changeX(newX: number) {
-      console.log(typeof newX, newX);
       self.x = newX;
     },
     changeY(newY: number) {
       self.y = newY;
+    },
+    changeWidth(newWidth: number) {
+      self.width = newWidth;
+    },
+    changeHeight(newHeight: number) {
+      self.height = newHeight;
     }
   }));
 

@@ -19,7 +19,8 @@ export const objectList = [
     width: 50,
     height: 50,
     object: {
-      type: ObjectType.Text
+      type: ObjectType.Text,
+      textContents: "Text Specific Contents"
     }
   },
   {
@@ -31,8 +32,7 @@ export const objectList = [
     height: 50,
     object: {
       type: ObjectType.Input,
-
-      whatup: "what~~~~~~~~~"
+      inputContents: "Input Specific Contents"
     }
   },
   {
@@ -43,7 +43,8 @@ export const objectList = [
     width: 50,
     height: 50,
     object: {
-      type: ObjectType.Rectangle
+      type: ObjectType.Rectangle,
+      rectangleContents: "Rectangle Specific Contents"
     }
   },
   {
@@ -55,8 +56,7 @@ export const objectList = [
     height: 50,
     object: {
       type: ObjectType.Oval,
-
-      whatup: "what~~~~~~~~~"
+      ovalContents: "Oval Specific Contents"
     }
   }
 ];
@@ -70,7 +70,8 @@ export const selectedObjects = [
     width: 50,
     height: 50,
     object: {
-      type: ObjectType.Text
+      type: ObjectType.Text,
+      textContents: "Text Specific Contents"
     }
   }
 ];

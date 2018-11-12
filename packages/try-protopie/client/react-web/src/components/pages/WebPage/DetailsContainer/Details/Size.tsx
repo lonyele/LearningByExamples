@@ -3,44 +3,46 @@ import * as React from "react";
 import { IObject } from "src/mobx-state-tree/stores/object/Object";
 import styled from "styled-components";
 
-export const PositionStyled = styled.div`
+export const SizeStyled = styled.div`
   display: flex;
   padding: 10px;
 `;
 
 @observer
-export class Position extends React.Component<
-  { selectedObject: IObject },
-  any
-> {
+export class Size extends React.Component<{ selectedObject: IObject }, any> {
   public render() {
-    const { x, y, changeX, changeY } = this.props.selectedObject;
+    const {
+      width,
+      height,
+      changeWidth,
+      changeHeight
+    } = this.props.selectedObject;
     return (
-      <PositionStyled>
-        <div style={{ width: "80px" }}>Position</div>
+      <SizeStyled>
+        <div style={{ width: "80px" }}>Size</div>
         <input
           style={{ marginLeft: "5px", width: "70px" }}
-          value={x}
+          value={width}
           onChange={(e: any) => {
             if (e.target.value.trim() === "") {
-              changeX(0);
+              changeWidth(0);
             } else {
-              changeX(parseFloat(e.target.value));
+              changeWidth(parseFloat(e.target.value));
             }
           }}
         />
         <input
           style={{ marginLeft: "5px", width: "70px" }}
-          value={y}
+          value={height}
           onChange={(e: any) => {
             if (e.target.value.trim() === "") {
-              changeX(0);
+              changeHeight(0);
             } else {
-              changeY(parseFloat(e.target.value));
+              changeHeight(parseFloat(e.target.value));
             }
           }}
         />
-      </PositionStyled>
+      </SizeStyled>
     );
   }
 }
