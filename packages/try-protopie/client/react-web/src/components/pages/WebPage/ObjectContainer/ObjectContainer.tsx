@@ -3,16 +3,12 @@ import { Icon } from "office-ui-fabric-react/lib/Icon";
 import { TextField } from "office-ui-fabric-react/lib/TextField";
 import * as React from "react";
 
-import { IObject, ObjectType } from "src/mobx-state-tree/stores/object/Object";
-import { IObjectStore } from "src/mobx-state-tree/stores/object/ObjectStore";
+import { IObject } from "src/mobx-state-tree/stores/object/Object";
+import {
+  icons,
+  IObjectStore
+} from "src/mobx-state-tree/stores/object/ObjectStore";
 import { ContainerHeader } from "../ContainerHeader/ContainerHeader";
-
-const icons = {
-  [ObjectType.Text]: "FontColorA",
-  [ObjectType.Input]: "TextField",
-  [ObjectType.Rectangle]: "RectangleShapeSolid",
-  [ObjectType.Oval]: "Record2"
-};
 
 @observer
 export default class ObjectContainer extends React.Component<
