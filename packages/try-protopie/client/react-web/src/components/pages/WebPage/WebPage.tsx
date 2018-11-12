@@ -6,8 +6,8 @@ import { AppbarContainer } from "./AppbarContainer/AppbarContainer";
 import { CanvasContainer } from "./CanvasContainer.tsx/CanvasContainer";
 import { DetailsContainer } from "./DetailsContainer/DetailsContainer";
 import { GridContainer } from "./GridContainer/GridContainter.style";
-import LayerContainer from "./LayerContainer/LayerContainer";
 import MenuContainer from "./MenuContainer/MenuContainer";
+import ObjectContainer from "./ObjectContainer/ObjectContainer";
 import { PreviewContainer } from "./PreviewContainer/PreviewContainer";
 import { WebPage } from "./WebPage.style";
 // export interface ILandingPageProps {
@@ -21,7 +21,7 @@ export default class WebPageContainer extends React.Component<any, any> {
         <MenuContainer />
         <AppbarContainer store={this.props.store} />
         <GridContainer>
-          <LayerContainer />
+          <ObjectContainer objects={this.props.store.objects} />
           <CanvasContainer />
           <ActionsContainer />
           <DetailsContainer />
