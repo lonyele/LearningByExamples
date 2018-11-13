@@ -9,10 +9,10 @@ export const icons = {
   [ObjectType.Rectangle]: "RectangleShapeSolid",
   [ObjectType.Oval]: "Record2"
 };
-
+const randomString = cuid();
 export const objectList = [
   {
-    id: cuid(),
+    id: randomString,
     name: "Input Text~",
     x: 100,
     y: 100,
@@ -63,7 +63,7 @@ export const objectList = [
 
 export const selectedObjects = [
   {
-    id: cuid(),
+    id: randomString,
     name: "Input Text",
     x: 100,
     y: 100,

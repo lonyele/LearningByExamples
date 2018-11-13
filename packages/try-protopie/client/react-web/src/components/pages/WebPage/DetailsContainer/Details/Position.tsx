@@ -22,6 +22,7 @@ export class Position extends React.Component<
           style={{ marginLeft: "5px", width: "70px" }}
           value={x}
           onChange={(e: any) => {
+            console.log("e.target.value", e.target.value);
             if (e.target.value.trim() === "") {
               changeX(0);
             } else {
