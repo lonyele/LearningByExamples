@@ -84,6 +84,82 @@ export const ObjectStore = types
   .actions(self => ({
     changeSelectedObjects(newSelectedObject: IObject) {
       self.selectedObjects = [newSelectedObject] as any;
+    },
+
+    addObject(type: ObjectType) {
+      switch (type) {
+        case ObjectType.Text: {
+          self.objects.push(
+            Object.create({
+              id: cuid(),
+              name: "Input Text",
+              x: 55,
+              y: 66,
+              width: 77,
+              height: 88,
+              object: {
+                type,
+                textContents: "what~~~~"
+              }
+            })
+          );
+          return;
+        }
+        case ObjectType.Input: {
+          self.objects.push(
+            Object.create({
+              id: cuid(),
+              name: "Input Input",
+              x: 55,
+              y: 66,
+              width: 77,
+              height: 88,
+              object: {
+                type,
+                inputContents: "what~~~~"
+              }
+            })
+          );
+          return;
+        }
+        case ObjectType.Rectangle: {
+          self.objects.push(
+            Object.create({
+              id: cuid(),
+              name: "Rectangle",
+              x: 55,
+              y: 66,
+              width: 77,
+              height: 88,
+              object: {
+                type,
+                rectangleContents: "what~~~~"
+              }
+            })
+          );
+          return;
+        }
+        case ObjectType.Oval: {
+          self.objects.push(
+            Object.create({
+              id: cuid(),
+              name: "Oval@@@@",
+              x: 55,
+              y: 66,
+              width: 77,
+              height: 88,
+              object: {
+                type,
+                ovalContents: "what~~~~"
+              }
+            })
+          );
+          return;
+        }
+        default: {
+          return "what???";
+        }
+      }
     }
   }));
 
