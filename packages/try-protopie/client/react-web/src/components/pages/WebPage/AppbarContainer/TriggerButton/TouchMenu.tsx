@@ -5,56 +5,56 @@ import { onAlertClicked } from "src/components/molecules/utils/onAlertClicked";
 
 const touchList = [
   {
-    key: "tap",
+    key: "Tap",
     text: "Tap",
     secondaryText: "T",
     onClick: onAlertClicked("Tap")
   },
   {
-    key: "doubleTap",
+    key: "DoubleTap",
     text: "Double Tap",
     onClick: onAlertClicked("Double Tap")
   },
   {
-    key: "touchDown",
+    key: "TouchDown",
     text: "Touch Down",
     onClick: onAlertClicked("Touch Down")
   },
   {
-    key: "touchUp",
+    key: "TouchUp",
     text: "Touch Up",
     secondaryText: "Ctrl + 1",
     onClick: onAlertClicked("Touch Up")
   },
   {
-    key: "longPress",
+    key: "LongPress",
     text: "Long Press",
     onClick: onAlertClicked("Long Press")
   },
   {
-    key: "fling",
+    key: "Fling",
     text: "Fling",
     onClick: onAlertClicked("Fling")
   },
   {
-    key: "pull",
+    key: "Pull",
     text: "Pull",
     onClick: onAlertClicked("Pull")
   },
 
   {
-    key: "drag",
+    key: "Drag",
     text: "Drag",
     secondaryText: "D",
     onClick: onAlertClicked("Drag")
   },
   {
-    key: "pinch",
+    key: "Pinch",
     text: "Pinch",
     onClick: onAlertClicked("Pinch")
   },
   {
-    key: "rotate",
+    key: "Rotate",
     text: "Rotate",
     onClick: onAlertClicked("Rotate")
   }
@@ -64,6 +64,7 @@ export class TouchMenu extends React.Component<any, any> {
     showCallout: false
   };
   public render() {
+    const { addTrigger } = this.props;
     return (
       <div
         style={{
@@ -112,7 +113,7 @@ export class TouchMenu extends React.Component<any, any> {
                 menuIcon: { display: "none" },
                 root: { backgroundColor: "white" }
               }}
-              onClick={onAlertClicked(touch.text)}
+              onClick={() => addTrigger(touch.key)}
             />
           );
         })}
