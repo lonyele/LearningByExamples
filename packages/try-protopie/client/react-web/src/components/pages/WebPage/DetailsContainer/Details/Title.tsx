@@ -1,8 +1,8 @@
+import { observer } from "mobx-react";
 import { Icon } from "office-ui-fabric-react/lib/Icon";
 import * as React from "react";
 import { IObject } from "src/mobx-state-tree/stores/object/Object";
 import { icons } from "src/mobx-state-tree/stores/object/ObjectStore";
-
 import styled from "styled-components";
 
 export const TitleStyled = styled.div`
@@ -11,6 +11,7 @@ export const TitleStyled = styled.div`
   padding: 10px;
 `;
 
+@observer
 export class Title extends React.Component<{ selectedObject: IObject }, any> {
   public render() {
     const { name, object } = this.props.selectedObject;

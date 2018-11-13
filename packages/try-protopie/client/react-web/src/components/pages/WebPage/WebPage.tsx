@@ -1,3 +1,4 @@
+import { observer } from "mobx-react";
 import * as React from "react";
 
 import { Header } from "src/components/organisms/Header";
@@ -13,6 +14,7 @@ import { WebPage } from "./WebPage.style";
 // export interface ILandingPageProps {
 // }
 
+@observer
 export default class WebPageContainer extends React.Component<any, any> {
   public render() {
     return (

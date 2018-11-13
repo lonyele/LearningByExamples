@@ -1,7 +1,7 @@
 import * as cuid from "cuid";
 import { Instance, types } from "mobx-state-tree";
 
-import { Object, ObjectType } from "./Object";
+import { IObject, Object, ObjectType } from "./Object";
 
 export const icons = {
   [ObjectType.Text]: "FontColorA",
@@ -81,6 +81,10 @@ export const ObjectStore = types
     selectedObjects: types.array(Object)
   })
   .views(self => ({}))
-  .actions(self => ({}));
+  .actions(self => ({
+    changeSelectedObjects(newSelectedObject: IObject) {
+      self.selectedObjects = [newSelectedObject] as any;
+    }
+  }));
 
 export type IObjectStore = Instance<typeof ObjectStore>;

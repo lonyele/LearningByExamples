@@ -1,4 +1,6 @@
+import { observer } from "mobx-react";
 import * as React from "react";
+
 import { IInput } from "src/mobx-state-tree/stores/object/Input/Input";
 import { IObject, ObjectType } from "src/mobx-state-tree/stores/object/Object";
 import { IOval } from "src/mobx-state-tree/stores/object/Oval/Oval";
@@ -8,6 +10,7 @@ import { Position } from "./Position";
 import { Size } from "./Size";
 import { Title } from "./Title";
 
+@observer
 export class Details extends React.Component<{ selectedObject: IObject }, any> {
   private getSpecificContents = (object: IObject) => {
     switch (object.object.type) {
