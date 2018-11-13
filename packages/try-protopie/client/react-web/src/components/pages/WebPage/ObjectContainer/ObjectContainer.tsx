@@ -135,7 +135,7 @@ export default class ObjectContainer extends React.Component<
                 styles={{
                   root: {
                     marginLeft: "5px",
-                    width: "150px"
+                    width: "130px"
                   },
                   fieldGroup: {
                     backgroundColor

@@ -1,9 +1,10 @@
 import { DefaultButton } from "office-ui-fabric-react/lib/Button";
 import * as React from "react";
-import { onAlertClicked } from "src/components/molecules/utils/onAlertClicked";
+import { ObjectType } from "src/mobx-state-tree/stores/object/Object";
 
 export class TextButton extends React.Component<any, any> {
   public render() {
+    const { addObject } = this.props;
     return (
       <DefaultButton
         id="TextButton"
@@ -37,7 +38,7 @@ export class TextButton extends React.Component<any, any> {
                 iconName: "FontColorA",
                 style: { color: "black" }
               },
-              onClick: onAlertClicked("Text")
+              onClick: () => addObject(ObjectType.Text)
             },
             {
               key: "input",
@@ -46,7 +47,7 @@ export class TextButton extends React.Component<any, any> {
                 iconName: "TextField",
                 style: { color: "black" }
               },
-              onClick: onAlertClicked("Input")
+              onClick: () => addObject(ObjectType.Input)
             }
           ]
         }}
