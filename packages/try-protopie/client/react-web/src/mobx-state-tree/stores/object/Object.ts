@@ -16,11 +16,27 @@ export const Object = types
   .model({
     id: types.string,
     name: types.string,
+    x: types.number,
+    y: types.number,
+    width: types.number,
+    height: types.number,
     object: types.union(Text, Input, Oval, Rectangle)
   })
   .actions(self => ({
     changeName(newName: string) {
       self.name = newName;
+    },
+    changeX(newX: number) {
+      self.x = newX;
+    },
+    changeY(newY: number) {
+      self.y = newY;
+    },
+    changeWidth(newWidth: number) {
+      self.width = newWidth;
+    },
+    changeHeight(newHeight: number) {
+      self.height = newHeight;
     }
   }));
 

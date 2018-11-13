@@ -1,53 +1,62 @@
 import * as cuid from "cuid";
 import { Instance, types } from "mobx-state-tree";
 
-import { Object, ObjectType } from "./Object";
+import { IObject, Object, ObjectType } from "./Object";
+
+export const icons = {
+  [ObjectType.Text]: "FontColorA",
+  [ObjectType.Input]: "TextField",
+  [ObjectType.Rectangle]: "RectangleShapeSolid",
+  [ObjectType.Oval]: "Record2"
+};
 
 export const objectList = [
   {
     id: cuid(),
     name: "Input Text~",
+    x: 100,
+    y: 100,
+    width: 50,
+    height: 50,
     object: {
       type: ObjectType.Text,
-      x: 100,
-      y: 100,
-      width: 50,
-      height: 50
+      textContents: "Text Specific Contents"
     }
   },
   {
     id: cuid(),
     name: "Input Name",
+    x: 50,
+    y: 50,
+    width: 50,
+    height: 50,
     object: {
       type: ObjectType.Input,
-      x: 50,
-      y: 50,
-      width: 50,
-      height: 50,
-      whatup: "what~~~~~~~~~"
+      inputContents: "Input Specific Contents"
     }
   },
   {
     id: cuid(),
     name: "Input Rectangle",
+    x: 100,
+    y: 100,
+    width: 50,
+    height: 50,
     object: {
       type: ObjectType.Rectangle,
-      x: 100,
-      y: 100,
-      width: 50,
-      height: 50
+      rectangleContents: "Rectangle Specific Contents"
     }
   },
   {
     id: cuid(),
     name: "Input Oval~",
+    x: 50,
+    y: 50,
+    width: 50,
+    height: 50,
     object: {
       type: ObjectType.Oval,
-      x: 50,
-      y: 50,
-      width: 50,
-      height: 50,
-      whatup: "what~~~~~~~~~"
+      ovalContents: "Oval Specific Contents"
     }
   }
 ];
@@ -56,12 +65,13 @@ export const selectedObjects = [
   {
     id: cuid(),
     name: "Input Text",
+    x: 100,
+    y: 100,
+    width: 50,
+    height: 50,
     object: {
       type: ObjectType.Text,
-      x: 100,
-      y: 100,
-      width: 50,
-      height: 50
+      textContents: "Text Specific Contents"
     }
   }
 ];
@@ -71,6 +81,10 @@ export const ObjectStore = types
     selectedObjects: types.array(Object)
   })
   .views(self => ({}))
-  .actions(self => ({}));
+  .actions(self => ({
+    changeSelectedObjects(newSelectedObject: IObject) {
+      self.selectedObjects = [newSelectedObject] as any;
+    }
+  }));
 
 export type IObjectStore = Instance<typeof ObjectStore>;
