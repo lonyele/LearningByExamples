@@ -11,7 +11,7 @@ export default class LandingPageContainer extends React.Component<any, any> {
     return (
       <LandingPage>
         <Header />
-        <div>LadingPage</div>
+        <h1>LadingPage</h1>
         <section>
           The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
           dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

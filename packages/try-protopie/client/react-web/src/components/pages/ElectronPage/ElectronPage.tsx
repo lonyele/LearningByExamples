@@ -2,16 +2,16 @@ import * as React from "react";
 
 import { Footer } from "src/components/organisms/Footer";
 import { Header } from "src/components/organisms/Header";
-import { FeaturesPage } from "./styles/FeaturesPage.style";
+import { ElectronPage } from "./styles/ElectronPage.style";
 // export interface ILandingPageProps {
 // }
 
-export default class FeaturesPageContainer extends React.Component<any, any> {
+export default class ElectronPageContainer extends React.Component<any, any> {
   public render() {
     return (
-      <FeaturesPage>
+      <ElectronPage>
         <Header />
-        <h1>FeaturesPage</h1>
+        <h1>ElectronPage</h1>
         <section>
           {" "}
           The standard Lorem Ipsum passage, used since the 1500s "Lorem ipsum
@@ -91,7 +91,7 @@ export default class FeaturesPageContainer extends React.Component<any, any> {
           in 45 BC "Sed ut perspiciatis unde omnis iste natus error sit
         </section>
         <Footer />
-      </FeaturesPage>
+      </ElectronPage>
     );
   }
 }
