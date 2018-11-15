@@ -1,6 +1,8 @@
 import * as React from "react";
 
+import { AnotherTest } from "./components/molecules/AnotherTest/AnotherTest";
 import { IMemo, Memo } from "./components/molecules/Memo";
+import { TestComplexType } from "./components/molecules/TestComplexType/TestComplexType";
 import { IRootStore } from "./models/root/root";
 class App extends React.Component<{
   store: IRootStore;
@@ -17,6 +19,11 @@ class App extends React.Component<{
     const { memos } = this.props.store;
     return (
       <div style={{ margin: "100px", display: "flex" }}>
+        <TestComplexType store={this.props.store} />
+
+        <div>~~~~~~~~~~~~</div>
+        <AnotherTest store={this.props.store} />
+        <div>~~~~~~~~~~~~</div>
         {this.renderMemos(memos)}
       </div>
     );

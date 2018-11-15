@@ -19,7 +19,7 @@ export const Memo = types
     id: types.string,
     user: types.reference(User),
     memoItems: types.array(MemoItemModel),
-    filter: types.enumeration("Filter", ["All", "Completed", "Incomplete"])
+    filter: types.enumeration<Filter>("Filter", [Filter.All, Filter.Completed, Filter.Incomplete])
   })
   .views(self => ({
     get filteredMemoItems() {

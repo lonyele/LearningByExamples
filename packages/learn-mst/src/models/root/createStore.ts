@@ -79,6 +79,38 @@ const initialState = {
       ],
       filter: Filter.All
     }
-  }
+  },
+  tests: [
+    {
+      id: "asdfaasdfsss111111",
+      content: "content!!!111111",
+      completed: false,
+      whattheHeck: {
+        type: "One",
+        content: "qqqqq",
+        oneSpecificContent: " asdf"
+      }
+    },
+    {
+      id: "asdfaasdfss222222",
+      content: "content!!!222222",
+      completed: false,
+      whattheHeck: {
+        type: "Two",
+        content: "qqqqq",
+        twoSpecificContent: " two"
+      }
+    },
+    {
+      id: "asdfaasdfsss333333333",
+      content: "content!!!333333",
+      completed: false,
+      whattheHeck: {
+        type: "One",
+        content: "qqqqq",
+        oneSpecificContent: " asdf"
+      }
+    }
+  ]
 };
 export const store = RootStore.create(initialState);
