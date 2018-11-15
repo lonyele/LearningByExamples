@@ -2,6 +2,7 @@ import * as cuid from "cuid";
 import { Instance, types } from "mobx-state-tree";
 
 import { Trigger, TriggerType } from "./Trigger";
+import { addTrigger } from "./TriggerStore/actions/addTrigger";
 
 export const icons = {
   [TriggerType.Tap]: "FontColorA",
@@ -55,18 +56,7 @@ export const TriggerStore = types
   })
   .views(self => ({}))
   .actions(self => ({
-    addTrigger(triggerType: TriggerType) {
-      console.log("addTrigger", triggerType);
-      const what = Trigger.create({
-        id: cuid(),
-        name: triggerType,
-        trigger: {
-          type: triggerType
-        }
-      });
-      self.triggers.push(what);
-      console.log(self.triggers);
-    }
+    addTrigger: addTrigger(self)
   }));
 
 export type ITriggerStore = Instance<typeof TriggerStore>;
