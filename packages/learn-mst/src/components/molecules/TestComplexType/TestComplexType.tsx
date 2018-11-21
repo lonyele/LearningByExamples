@@ -9,8 +9,8 @@ export const TestComplexType = observer((props: any) => {
   return (
     <div>
       <h3>Test Title</h3>
-      <button onClick={() => props.store.addTest("One")}>Add Test One</button>
-      <button onClick={() => props.store.addTest("Two")}>Add Test Two</button>
+      <button onClick={() => props.store.addOne()}>Add Test One</button>
+      <button onClick={() => props.store.addTwo()}>Add Test Two</button>
       {props.store.tests.map((test: any) => (
         <div key={test.id} style={{ border: "1px solid black" }}>
           <TextField
