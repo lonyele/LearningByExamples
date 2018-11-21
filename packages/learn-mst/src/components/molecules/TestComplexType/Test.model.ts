@@ -1,43 +1,68 @@
 import { Instance, types } from "mobx-state-tree";
 
-export const ObjectOne = types
+const OneBase = types
   .model({
     type: "One",
-    content: types.string,
-    oneSpecificContent: "oneSpecificContent"
-  })
-  .actions(self => ({}));
-
-export type IObjectOne = Instance<typeof ObjectOne>;
-
-export const ObjectTwo = types
-  .model({
-    type: "Two",
-    content: types.string,
-    twoSpecific: "twoSpecificContent"
-  })
-  .actions(self => ({}));
-
-export type IObjectTwo = Instance<typeof ObjectTwo>;
-
-export const Test = types
-  .model({
-    id: types.string,
-    content: types.string,
-    optional: "optional~~~",
-    whattheHeck: types.union(ObjectOne, ObjectTwo),
-    completed: types.boolean
+    oneSpecific: "oneSpecificContent"
   })
   .actions(self => ({
-    changeContent(newContent: string) {
-      self.content = newContent;
-    },
-    whatthe() {
-      console.log("????????????");
+    oneBaseActions() {
+      console.log("oneBaseActions")
     }
   }));
 
-export type ITest = Instance<typeof Test>;
+// export type IObjectOneBase = Instance<typeof ObjectOneBase>;
+
+const TwoBase = types
+  .model({
+    type: "Two",
+    twoSpecific: "twoSpecificContent"
+  })
+  .actions(self => ({
+    twoBaseActions() {
+      console.log("twoBaseActions")
+    }
+  }));
+
+// export type IObjectTwo = Instance<typeof ObjectTwoBase>;
+
+const ObjectBase = types.model({ 
+  id: types.string,
+  name: types.string,
+  content: types.string,
+  optional: "Object optional~~~",
+}).actions(self => ({
+  changeContent(newContent: string) {
+    self.content = newContent;
+  }
+}))
+
+
+
+
+export const One = types.compose("One", ObjectBase, OneBase)
+export const Two = types.compose("Two", ObjectBase, TwoBase)
+export type IOne = Instance<typeof One>;
+export type ITwo = Instance<typeof Two>;
+
+// export const Test = types
+//   .model({
+//     id: types.string,
+//     content: types.string,
+//     optional: "optional~~~",
+//     whattheHeck: types.union(ObjectOne, ObjectTwo),
+//     completed: types.boolean
+//   })
+//   .actions(self => ({
+//     changeContent(newContent: string) {
+//       self.content = newContent;
+//     },
+//     whatthe() {
+//       console.log("????????????");
+//     }
+//   }));
+
+// export type ITest = Instance<typeof Test>;
 
 // export const TestStore = types
 //   .model({

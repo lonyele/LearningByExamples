@@ -1,5 +1,8 @@
 import { Filter } from "src/components/molecules/Memo/models/Memo.model";
 import { RootStore } from "./root";
+// tslint:disable-next-line:ordered-imports
+import { onSnapshot } from 'mobx-state-tree';
+import { One, Two } from 'src/components/molecules/TestComplexType/Test.model';
 
 const initialState = {
   users: {
@@ -81,36 +84,50 @@ const initialState = {
     }
   },
   tests: [
-    {
+    One.create({
       id: "asdfaasdfsss111111",
       content: "content!!!111111",
-      completed: false,
-      whattheHeck: {
-        type: "One",
-        content: "qqqqq",
-        oneSpecificContent: " asdf"
-      }
-    },
-    {
+      name: "content11",
+      type:"One",optional: "Object optional~~~",
+      oneSpecific: "ASDFASDF"
+      // completed: false,
+      // whattheHeck: {
+      //   type: "One",
+      //   content: "qqqqq",
+      //   oneSpecificContent: " asdf"
+      // }
+    }),
+    Two.create({
       id: "asdfaasdfss222222",
       content: "content!!!222222",
-      completed: false,
-      whattheHeck: {
-        type: "Two",
-        content: "qqqqq",
-        twoSpecificContent: " two"
-      }
-    },
-    {
+      name: "content11",
+      type: "Two",
+      optional: "Object optional~~~",
+      twoSpecific: "asdf"
+      // completed: false,
+      // whattheHeck: {
+      //   type: "Two",
+      //   content: "qqqqq",
+      //   twoSpecificContent: " two"
+      // }
+    }),
+    Two.create({
       id: "asdfaasdfsss333333333",
       content: "content!!!333333",
-      completed: false,
-      whattheHeck: {
-        type: "One",
-        content: "qqqqq",
-        oneSpecificContent: " asdf"
-      }
-    }
+      name: "content11",
+      type: "Two",
+      optional: "Object optional~~~",
+      twoSpecific: "asdf!!!!"
+      // completed: false,
+      // whattheHeck: {
+      //   type: "One",
+      //   content: "qqqqq",
+      //   oneSpecificContent: " asdf"
+      // }
+    })
   ]
 };
 export const store = RootStore.create(initialState);
+onSnapshot(store, snapshot => {
+  console.dir(snapshot)
+})
