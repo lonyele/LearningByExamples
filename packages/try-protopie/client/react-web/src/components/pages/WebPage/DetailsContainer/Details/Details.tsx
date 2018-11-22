@@ -37,7 +37,6 @@ export class Details extends React.Component<{ selectedObject: IObject }, any> {
     return (
       <div style={{ border: "1px solid black" }}>
         <Title selectedObject={selectedObject} />
-        <div>현재 이름은 바뀌는데 다른값이 저장이 안되는거 같네요. </div>
         <Position selectedObject={selectedObject} />
         <Size selectedObject={selectedObject} />
         <div>{this.getSpecificContents(selectedObject)}~~~~</div>
