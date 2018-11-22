@@ -30,7 +30,7 @@ export class AppbarContainer extends React.Component<any, any> {
         <TextButton addObject={this.props.store.objects.addObject} />
         <ContainerButton />
         <DeviceModal devices={this.props.store.devices} />
-        <TriggerButton addTrigger={this.props.store.triggers.addTrigger} />
+        <TriggerButton triggers={this.props.store.triggers} />
         <PreviewButton />
         <DeviceButton />
         <PlayButton />

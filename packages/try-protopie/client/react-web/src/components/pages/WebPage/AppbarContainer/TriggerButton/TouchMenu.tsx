@@ -8,23 +8,23 @@ const touchList = [
     key: "Tap",
     text: "Tap",
     secondaryText: "T",
-    onClick: onAlertClicked("Tap")
+    onClick: "addTap" //  onAlertClicked("Tap")
   },
   {
     key: "DoubleTap",
     text: "Double Tap",
-    onClick: onAlertClicked("Double Tap")
+    onClick: "addDoubleTap" // onAlertClicked("Double Tap")
   },
   {
     key: "TouchDown",
     text: "Touch Down",
-    onClick: onAlertClicked("Touch Down")
+    onClick: "addTouchDown" // onAlertClicked("Touch Down")
   },
   {
     key: "TouchUp",
     text: "Touch Up",
     secondaryText: "Ctrl + 1",
-    onClick: onAlertClicked("Touch Up")
+    onClick: "addTouchUp" // onAlertClicked("Touch Up")
   },
   {
     key: "LongPress",
@@ -64,7 +64,7 @@ export class TouchMenu extends React.Component<any, any> {
     showCallout: false
   };
   public render() {
-    const { addTrigger } = this.props;
+    const { triggers } = this.props;
     return (
       <div
         style={{
@@ -113,7 +113,7 @@ export class TouchMenu extends React.Component<any, any> {
                 menuIcon: { display: "none" },
                 root: { backgroundColor: "white" }
               }}
-              onClick={() => addTrigger(touch.key)}
+              onClick={() => triggers[touch.onClick]()}
             />
           );
         })}

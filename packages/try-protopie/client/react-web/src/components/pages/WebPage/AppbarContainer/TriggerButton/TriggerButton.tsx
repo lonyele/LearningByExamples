@@ -9,7 +9,7 @@ import { TouchMenu } from "./TouchMenu";
 
 export class TriggerButton extends React.Component<any, any> {
   public render() {
-    const { addTrigger } = this.props;
+    const { triggers } = this.props;
     return (
       <DefaultButton
         id="TriggerButton"
@@ -42,7 +42,7 @@ export class TriggerButton extends React.Component<any, any> {
             <TouchMenu />
             <TouchMenu /> */}
             <div>
-              <TouchMenu addTrigger={addTrigger} />
+              <TouchMenu triggers={triggers} />
             </div>
             <div>
               <ConditionalMenu />

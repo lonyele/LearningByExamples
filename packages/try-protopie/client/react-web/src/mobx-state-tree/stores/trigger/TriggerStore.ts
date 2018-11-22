@@ -2,7 +2,11 @@ import * as cuid from "cuid";
 import { Instance, types } from "mobx-state-tree";
 
 import { Trigger, TriggerType } from "./Trigger";
-import { addTrigger } from "./TriggerStore/actions/addTrigger";
+import { addDoubleTap } from "./TriggerStore/actions/addDoubleTap";
+import { addTap } from "./TriggerStore/actions/addTap";
+import { addTouchDown } from "./TriggerStore/actions/addTouchDown";
+import { addTouchUp } from "./TriggerStore/actions/addTouchUp";
+// import { addTrigger } from "./TriggerStore/actions/addTrigger";
 
 export const icons = {
   [TriggerType.Tap]: "FontColorA",
@@ -56,7 +60,11 @@ export const TriggerStore = types
   })
   .views(self => ({}))
   .actions(self => ({
-    addTrigger: addTrigger(self)
+    // addTrigger: addTrigger(self),
+    addTap: addTap(self),
+    addDoubleTap: addDoubleTap(self),
+    addTouchDown: addTouchDown(self),
+    addTouchUp: addTouchUp(self)
   }));
 
 export type ITriggerStore = Instance<typeof TriggerStore>;
