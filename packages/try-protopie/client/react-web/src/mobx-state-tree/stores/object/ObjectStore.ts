@@ -1,6 +1,10 @@
 import * as cuid from "cuid";
 import { Instance, types } from "mobx-state-tree";
 
+import { addInput } from "./actions/addInput";
+import { addOval } from "./actions/addOval";
+import { addRectangle } from "./actions/addRectangle";
+import { addText } from "./actions/addText";
 import { IObject, Object, ObjectType } from "./Object";
 
 export const icons = {
@@ -78,82 +82,10 @@ export const ObjectStore = types
     changeSelectedObjects(newSelectedObject: IObject) {
       self.selectedObjectIds[0] = newSelectedObject.id;
     },
-
-    addObject(type: ObjectType) {
-      switch (type) {
-        case ObjectType.Text: {
-          self.objects.push(
-            Object.create({
-              id: cuid(),
-              name: "Input Text",
-              x: 55,
-              y: 66,
-              width: 77,
-              height: 88,
-              object: {
-                type,
-                textContents: "what~~~~"
-              }
-            })
-          );
-          return;
-        }
-        case ObjectType.Input: {
-          self.objects.push(
-            Object.create({
-              id: cuid(),
-              name: "Input Input",
-              x: 55,
-              y: 66,
-              width: 77,
-              height: 88,
-              object: {
-                type,
-                inputContents: "what~~~~"
-              }
-            })
-          );
-          return;
-        }
-        case ObjectType.Rectangle: {
-          self.objects.push(
-            Object.create({
-              id: cuid(),
-              name: "Rectangle",
-              x: 55,
-              y: 66,
-              width: 77,
-              height: 88,
-              object: {
-                type,
-                rectangleContents: "what~~~~"
-              }
-            })
-          );
-          return;
-        }
-        case ObjectType.Oval: {
-          self.objects.push(
-            Object.create({
-              id: cuid(),
-              name: "Oval@@@@",
-              x: 55,
-              y: 66,
-              width: 77,
-              height: 88,
-              object: {
-                type,
-                ovalContents: "what~~~~"
-              }
-            })
-          );
-          return;
-        }
-        default: {
-          return "what???";
-        }
-      }
-    }
+    addInput: addInput(self),
+    addOval: addOval(self),
+    addRectangle: addRectangle(self),
+    addText: addText(self)
   }));
 
 export type IObjectStore = Instance<typeof ObjectStore>;
