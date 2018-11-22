@@ -79,8 +79,8 @@ export const ObjectStore = types
     }
   }))
   .actions(self => ({
-    changeSelectedObjects(newSelectedObject: IObject) {
-      self.selectedObjectIds[0] = newSelectedObject.id;
+    changeSelectedObjects(selectedObjectId: string) {
+      self.selectedObjectIds[0] = selectedObjectId;
     },
     addInput: addInput(self),
     addOval: addOval(self),
