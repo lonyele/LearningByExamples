@@ -26,8 +26,14 @@ export class AppbarContainer extends React.Component<any, any> {
       >
         <ImageButton />
         <VideoButton />
-        <ShapeButton addObject={this.props.store.objects.addObject} />
-        <TextButton addObject={this.props.store.objects.addObject} />
+        <ShapeButton
+          addRectangle={this.props.store.objects.addRectangle}
+          addOval={this.props.store.objects.addOval}
+        />
+        <TextButton
+          addText={this.props.store.objects.addText}
+          addInput={this.props.store.objects.addInput}
+        />
         <ContainerButton />
         <DeviceModal devices={this.props.store.devices} />
         <TriggerButton triggers={this.props.store.triggers} />

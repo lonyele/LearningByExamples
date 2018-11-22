@@ -1,10 +1,9 @@
 import { DefaultButton } from "office-ui-fabric-react/lib/Button";
 import * as React from "react";
-import { ObjectType } from "src/mobx-state-tree/stores/object/Object";
 
 export class TextButton extends React.Component<any, any> {
   public render() {
-    const { addObject } = this.props;
+    const { addText, addInput } = this.props;
     return (
       <DefaultButton
         id="TextButton"
@@ -38,7 +37,7 @@ export class TextButton extends React.Component<any, any> {
                 iconName: "FontColorA",
                 style: { color: "black" }
               },
-              onClick: () => addObject(ObjectType.Text)
+              onClick: () => addText()
             },
             {
               key: "input",
@@ -47,7 +46,7 @@ export class TextButton extends React.Component<any, any> {
                 iconName: "TextField",
                 style: { color: "black" }
               },
-              onClick: () => addObject(ObjectType.Input)
+              onClick: () => addInput()
             }
           ]
         }}

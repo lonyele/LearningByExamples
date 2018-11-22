@@ -1,10 +1,9 @@
 import { DefaultButton } from "office-ui-fabric-react/lib/Button";
 import * as React from "react";
-import { ObjectType } from "src/mobx-state-tree/stores/object/Object";
 
 export class ShapeButton extends React.Component<any, any> {
   public render() {
-    const { addObject } = this.props;
+    const { addRectangle, addOval } = this.props;
     return (
       <DefaultButton
         id="ShapeButton"
@@ -39,7 +38,7 @@ export class ShapeButton extends React.Component<any, any> {
                 iconName: "RectangleShapeSolid",
                 style: { color: "black" }
               },
-              onClick: () => addObject(ObjectType.Rectangle)
+              onClick: () => addRectangle()
             },
             {
               key: "oval",
@@ -49,7 +48,7 @@ export class ShapeButton extends React.Component<any, any> {
                 iconName: "Record2",
                 style: { color: "black" }
               },
-              onClick: () => addObject(ObjectType.Oval)
+              onClick: () => addOval()
             }
           ]
         }}

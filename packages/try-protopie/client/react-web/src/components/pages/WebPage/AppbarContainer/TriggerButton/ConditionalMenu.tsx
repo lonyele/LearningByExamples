@@ -27,7 +27,7 @@ const conditionalList = [
     onClick: onAlertClicked("Detect")
   },
   {
-    key: "divider"
+    key: "divider-1"
   },
   {
     key: "mouseOver",
@@ -40,7 +40,7 @@ const conditionalList = [
     onClick: onAlertClicked("Mouse Out")
   },
   {
-    key: "divider"
+    key: "divider-2"
   },
   {
     key: "press",
