@@ -61,29 +61,22 @@ export const objectList = [
   }
 ];
 
-export const selectedObjects = [
-  {
-    id: randomString,
-    name: "Input Text",
-    x: 100,
-    y: 100,
-    width: 50,
-    height: 50,
-    object: {
-      type: ObjectType.Text,
-      textContents: "Text Specific Contents"
-    }
-  }
-];
+export const selectedObjectIds = [randomString];
 export const ObjectStore = types
   .model({
     objects: types.array(Object),
-    selectedObjects: types.array(Object)
+    selectedObjectIds: types.array(types.string)
   })
-  .views(self => ({}))
+  .views(self => ({
+    get selectedObject() {
+      return self.objects.filter(
+        (object: IObject) => object.id === self.selectedObjectIds[0]
+      );
+    }
+  }))
   .actions(self => ({
     changeSelectedObjects(newSelectedObject: IObject) {
-      self.selectedObjects = [newSelectedObject] as any;
+      self.selectedObjectIds[0] = newSelectedObject.id;
     },
 
     addObject(type: ObjectType) {

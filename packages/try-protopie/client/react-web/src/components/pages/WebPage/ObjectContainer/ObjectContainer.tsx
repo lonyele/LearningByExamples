@@ -98,7 +98,7 @@ export default class ObjectContainer extends React.Component<
     const { onTextfieldFocused } = this.state;
     const {
       objects,
-      selectedObjects,
+      selectedObjectIds,
       changeSelectedObjects
     } = this.props.objects;
     return (
@@ -106,7 +106,7 @@ export default class ObjectContainer extends React.Component<
         <ContainerHeader name={"Object"} />
         {objects.map((object: IObject) => {
           const backgroundColor =
-            selectedObjects[0].id === object.id ? "#bfbfbf" : "inherit";
+            selectedObjectIds[0] === object.id ? "#bfbfbf" : "inherit";
           return (
             <div
               key={object.id}

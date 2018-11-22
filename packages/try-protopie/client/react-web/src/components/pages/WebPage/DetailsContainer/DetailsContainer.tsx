@@ -8,13 +8,13 @@ import { PictureContainer } from "./PictureContainer";
 @observer
 export class DetailsContainer extends React.Component<any, any> {
   public render() {
-    const { selectedObjects } = this.props;
+    const { selectedObject } = this.props;
     return (
       <div style={{ border: "1px solid black" }}>
         <ContainerHeader name={"Details"} />
-        <AlignContainer selectedObject={selectedObjects[0]} />
-        <PictureContainer selectedObject={selectedObjects[0]} />
-        <Details selectedObject={selectedObjects[0]} />
+        <AlignContainer selectedObject={selectedObject[0]} />
+        <PictureContainer selectedObject={selectedObject[0]} />
+        <Details selectedObject={selectedObject[0]} />
       </div>
     );
   }
