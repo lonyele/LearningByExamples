@@ -24,7 +24,7 @@ export default class WebPageContainer extends React.Component<any, any> {
         <AppbarContainer store={this.props.store} />
         <GridContainer>
           <ObjectContainer objects={this.props.store.objects} />
-          <CanvasContainer />
+          <CanvasContainer store={this.props.store} />
           <TriggersContainer triggers={this.props.store.triggers} />
           <DetailsContainer
             selectedObject={this.props.store.objects.selectedObject}
