@@ -58,8 +58,10 @@ class BackgroundStage extends React.Component<any, any> {
                 <TestRectangle
                   key={object.id}
                   stage={this.backgroundStage}
-                  x={index * 50}
-                  y={index * 50}
+                  x={object.x}
+                  y={object.y}
+                  width={object.width}
+                  height={object.height}
                 />
               );
             }

@@ -21,7 +21,12 @@ export class TestRectangle extends React.Component<any, any> {
       if (hul === undefined) {
         this.createRectangle(this.props.stage);
       } else {
-        (hul as any).moveTo(this.props.x, this.props.y);
+        console.log("여긴 드러옴????", this.props);
+        // (hul as any).moveTo(this.props.x, this.props.y);
+        (hul as any).x = this.props.x;
+        (hul as any).y = this.props.y;
+        (hul as any).width = this.props.width;
+        (hul as any).height = this.props.height;
       }
     } else {
       console.log("TestText CDU 인데 ELSE임");
@@ -32,11 +37,16 @@ export class TestRectangle extends React.Component<any, any> {
     const graphics = new PIXI.Graphics();
     graphics.lineStyle(2, 0x0000ff, 1);
     graphics.beginFill(0xff700b, 1);
-    graphics.drawRect(this.props.x, this.props.y, 120, 120);
+    graphics.drawRect(
+      this.props.x,
+      this.props.y,
+      this.props.width,
+      this.props.height
+    );
     stage.stage.addChild(graphics);
     this.setState({ myRect: graphics });
   };
   public render() {
-    return null; //  ref={this.mystage}
+    return <div />; //  ref={this.mystage}
   }
 }
