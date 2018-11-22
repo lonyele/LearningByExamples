@@ -5,9 +5,5 @@
     "lerna": "^3.4.1"
   },
   "version": "independent",
-  "dependencies": {
-    "create-react-app": "^2.0.3",
-    "create-react-native-app": "^2.0.2",
-    "global": "^4.3.2"
-  }
+  "dependencies": {}
 }
