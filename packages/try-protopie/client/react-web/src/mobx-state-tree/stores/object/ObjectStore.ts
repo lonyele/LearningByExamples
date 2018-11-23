@@ -42,8 +42,8 @@ export const objectList = [
   {
     id: cuid(),
     name: "Input Rectangle",
-    x: 100,
-    y: 100,
+    x: 0,
+    y: 0,
     width: 50,
     height: 50,
     object: {
