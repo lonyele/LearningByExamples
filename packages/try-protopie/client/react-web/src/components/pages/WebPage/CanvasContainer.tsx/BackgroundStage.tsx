@@ -62,6 +62,7 @@ class BackgroundStage extends React.Component<any, any> {
                   y={object.y}
                   width={object.width}
                   height={object.height}
+                  object={object}
                 />
               );
             }

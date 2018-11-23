@@ -4,7 +4,8 @@ import * as React from "react";
 @observer
 export class TestRectangle extends React.Component<any, any> {
   public state = {
-    myRect: undefined // new PIXI.Text()
+    myRect: undefined, // new PIXI.Text()
+    drag: false
   };
 
   public componentDidMount() {
@@ -23,10 +24,12 @@ export class TestRectangle extends React.Component<any, any> {
       } else {
         console.log("여긴 드러옴????", this.props);
         // (hul as any).moveTo(this.props.x, this.props.y);
-        (hul as any).x = this.props.x;
-        (hul as any).y = this.props.y;
-        (hul as any).width = this.props.width;
-        (hul as any).height = this.props.height;
+        if (!this.state.drag) {
+          (hul as any).x = this.props.x;
+          (hul as any).y = this.props.y;
+          (hul as any).width = this.props.width;
+          (hul as any).height = this.props.height;
+        }
       }
     } else {
       console.log("TestText CDU 인데 ELSE임");
@@ -43,7 +46,30 @@ export class TestRectangle extends React.Component<any, any> {
       this.props.width,
       this.props.height
     );
+
+    graphics.interactive = true;
+    graphics.buttonMode = true;
+    graphics.on("mousedown", (e: any) => {
+      console.log("mousedown");
+      this.setState({ drag: true });
+    });
+    graphics.on("mouseup", (e: any) => {
+      console.log("mouseup");
+
+      this.setState({ drag: false });
+    });
+    graphics.on("mousemove", (e: any) => {
+      if (this.state.drag && this.state.myRect !== undefined) {
+        console.log("mousemove", e.data);
+        this.props.object.changeX(e.data.originalEvent.movementX);
+        this.props.object.changeY(e.data.originalEvent.movementY);
+        (this.state.myRect as any).position.x += e.data.originalEvent.movementX;
+        (this.state.myRect as any).position.y += e.data.originalEvent.movementY;
+      }
+    });
+
     stage.stage.addChild(graphics);
+
     this.setState({ myRect: graphics });
   };
   public render() {
