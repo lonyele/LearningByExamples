@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-kafka-producer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: node-kafka-producer
+  template:
+    metadata:
+      labels:
+        component: node-kafka-producer
+    spec:
+      containers:
+        - name: node-kafka-producer
+          image: lonyele/test-producer
+          ports:
+            - name: http-server
+              containerPort: 5500

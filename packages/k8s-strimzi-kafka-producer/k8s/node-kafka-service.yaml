@@ -1,0 +1,39 @@
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: node-kafka-producer-cluster-ip
+# spec:
+#   type: ClusterIP
+#   selector:
+#     component: node-kafka-producer
+#   ports:
+#     - port: 5500
+#       targetPort: 5500
+
+# kind: Service
+# apiVersion: v1
+# metadata:
+#   name: my-service
+#   labels:
+#     app: node-kafka-producer
+# spec:
+#   type: LoadBalancer
+#   selector:
+#     app: node-kafka-producer
+#   ports:
+#     - port: 32222
+#       targetPort: 5500
+
+kind: Service
+apiVersion: v1
+metadata:
+  name: node-kafka-producer
+  labels:
+    app: node-kafka-producer
+spec:
+  type: NodePort
+  selector:
+    app: node-kafka-producer
+  ports:
+    - port: 80
+      targetPort: 5500
