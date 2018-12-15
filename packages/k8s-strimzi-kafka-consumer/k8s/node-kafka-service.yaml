@@ -27,13 +27,13 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: node-rdkafka-producer-service
+  name: node-kafka-consumer-service
   labels:
-    app: node-rdkafka-producer-service
+    app: node-kafka-consumer-service
 spec:
   type: NodePort
   selector:
-    component: node-rdkafka-producer
+    component: node-kafka-consumer
   ports:
-    - port: 5500
-      targetPort: 5500
+    - port: 6500
+      targetPort: 6500

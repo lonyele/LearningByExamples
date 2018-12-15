@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-kafka-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: node-kafka-consumer
+  template:
+    metadata:
+      labels:
+        component: node-kafka-consumer
+    spec:
+      containers:
+        - name: node-kafka-consumer
+          image: lonyele/node-kafka-consumer
+          ports:
+            - name: http-server
+              containerPort: 6500

@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-rdkafka-producer
+  name: strimzi-kafka-producer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      component: node-rdkafka-producer
+      component: strimzi-kafka-producer
   template:
     metadata:
       labels:
-        component: node-rdkafka-producer
+        component: strimzi-kafka-producer
     spec:
       containers:
-        - name: node-rdkafka-producer
-          image: lonyele/node-rdkafka-producer
+        - name: strimzi-kafka-producer
+          image: lonyele/strimzi-kafka-producer
           ports:
             - name: http-server
               containerPort: 5500

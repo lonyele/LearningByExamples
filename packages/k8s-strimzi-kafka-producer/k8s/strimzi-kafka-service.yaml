@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: strimzi-kafka-producer-service
+  labels:
+    app: strimzi-kafka-producer-service
+spec:
+  type: NodePort
+  selector:
+    component: strimzi-kafka-producer
+  ports:
+    - port: 5500
+      targetPort: 5500

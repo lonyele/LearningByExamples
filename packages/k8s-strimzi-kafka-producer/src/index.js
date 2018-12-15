@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const port = 5500;
 
-const async = require("async");
 const { Producer } = require("sinek");
 
 let producer;
@@ -16,16 +15,17 @@ const kafkaConfig = () => {
     //either one of the following, if you want to connect directly to the broker
     //you should omit the zkConStr field and just provide kafkaHost
     //zkConStr: "localhost:2181/kafka", 여기에다가 하면 자동으로 leader로 가게 해주나?
-    kafkaHost: "localhost:9092", //no trailing slash here!
-
+    // kafkaHost: "my-release-kafka.default.svc.cluster.local:9092", //no trailing slash here!
+    // kafkaHost: "my-cluster-kafka-bootstrap:9092", //no trailing slash here!
+    kafkaHost: "localhost:31286",
     logger: {
       debug: msg => console.log("debug", msg),
       info: msg => console.log("info", msg),
       warn: msg => console.log("warn", msg),
       error: msg => console.log("error", msg)
     },
-    groupId: "testWindow",
-    clientName: "testWindow",
+    // groupId: "testWindow",
+    // clientName: "testWindow",
     workerPerPartition: 1,
     options: {
       sessionTimeout: 8000,
@@ -43,7 +43,7 @@ const kafkaConfig = () => {
       partitionerType: 3
     }
   };
-  producer = new Producer(config, ["test-node-producer-1"], partitions);
+  producer = new Producer(config, "test", partitions);
 
   producer.connect().then(_ => {
     console.log("ok producer is ready");
@@ -53,12 +53,16 @@ const kafkaConfig = () => {
     producerIsReady = false;
     console.error("에러", error);
   });
+
+  return producer;
 };
 
 const produceFunc = variables => {
+  console.log("여기?? 1");
   if (producerIsReady) {
+    console.log("여기?? 2");
     producer.bufferFormat(
-      "test-node-producer-1",
+      "test",
       "key from kafka sinek client",
       variables,
       version,
@@ -70,12 +74,16 @@ const produceFunc = variables => {
 };
 
 let count = 0;
-kafkaConfig();
+producer = kafkaConfig();
 
 app.get("/", (req, res) => res.send("Hello World! producer~~"));
 app.get("/producer", (req, res) => {
-  produceFunc("node producer: " + count);
+  console.log("여기?? 0");
+  produceFunc({ what: "node producer: " + count });
+  console.log("여기?? 3", { what: "node producer: " + count });
   count++;
   return res.send("ok produced to kafka");
 });
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+
+produceFunc("node producer: " + count);
