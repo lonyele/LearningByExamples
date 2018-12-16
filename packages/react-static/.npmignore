@@ -1,0 +1,35 @@
+!/src/index.d.ts
+.DS_Store
+.DS_Store
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+.esm-cache
+.github
+.history
+*.log
+*.sketch
+*/cordova/platforms
+*/cordova/plugins
+*/cordova/res
+*/cordova/www
+/coverage
+/examples/*/dist
+/examples/*/package-lock.json
+/examples/*/yarn.lock
+/src
+/test
+# cordova
+# Documentation
+# Media
+# misc
+# production
+# testing
+docs-dist/ 
+docs/
+node_modules
+npm-debug.log*
+tmp/
+yarn-debug.log*
+yarn-error.log*
