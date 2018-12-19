@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "target": "es2016",
+    "sourceMap": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "typeRoots": ["typings/index.d.ts"],
+    "types": ["node", "mocha", "chrome"]
+  },
+  "presets": [
+    "env",
+    {
+      "modules": false
+    }
+  ],
+  "files": ["typings/index.d.ts"],
+  "include": ["client/**/*", "src/**/*", "specs/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"],
+  "extensions": {
+    ".ts": "TS",
+    ".js": "JS"
+  }
+}
